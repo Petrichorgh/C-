@@ -1,0 +1,28 @@
+# Project: Hello C++
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = 4.程序流程机构.o
+LINKOBJ  = 4.程序流程机构.o
+LIBS     = -L"E:/DEVC++/Dev-Cpp/MinGW64/lib" -L"E:/DEVC++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"E:/DEVC++/Dev-Cpp/MinGW64/include" -I"E:/DEVC++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/DEVC++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"E:/DEVC++/Dev-Cpp/MinGW64/include" -I"E:/DEVC++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/DEVC++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/DEVC++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "MY C++.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+4.程序流程机构.o: 4.程序流程机构.cpp
+	$(CPP) -c 4.程序流程机构.cpp -o 4.程序流程机构.o $(CXXFLAGS)
